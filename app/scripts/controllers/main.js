@@ -8,10 +8,9 @@
  * Controller of the App
  */
 angular.module('App')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function (menu, $http, $scope) {
+    // $http.get('/scripts/mean_tea_data.json').then(res => $scope.menu = res)
+    console.log(menu)
+    $scope.menu = menu.data
+   
   });

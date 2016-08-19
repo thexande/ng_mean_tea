@@ -20,6 +20,9 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
+        resolve: {
+          menu: ($http) => $http.get('/scripts/mean_tea_data.json').then(res => res) 
+        },
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
@@ -32,4 +35,4 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
